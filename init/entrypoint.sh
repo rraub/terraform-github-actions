@@ -2,11 +2,11 @@
 set -e
 cd "${TF_ACTION_WORKING_DIR:-.}"
 
-set +e
+#set +e
 OUTPUT=$(sh -c "terraform init -no-color -input=false $*" 2>&1)
 SUCCESS=$?
 echo "$OUTPUT"
-set -e
+#set -e
 
 if [ $SUCCESS -eq 0 ]; then
     exit 0
